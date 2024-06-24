@@ -14,11 +14,23 @@ import {
   SheetTrigger,
 } from "../components/ui/sheet";
 import Link from "next/link";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "../components/ui/dropdown-menu";
 
 import { buttonVariants } from "./ui/button";
-import { Menu } from "lucide-react";
+import {
+  Menu,
+  ChevronDown,
+  Shield,
+  Heart,
+  Car,
+  TrendingUp,
+} from "lucide-react";
 import { ModeToggle } from "./ModeToggle";
-// import { ModeToggle } from "./mode-toggle";
 // import { LogoIcon } from "./Icons";
 
 const routeList = [
@@ -93,9 +105,7 @@ export const Navbar = () => {
 
               <SheetContent side={"left"}>
                 <SheetHeader>
-                  <SheetTitle className="font-bold text-xl">
-                    Shadcn/React
-                  </SheetTitle>
+                  <SheetTitle className="font-bold text-xl">VFD</SheetTitle>
                 </SheetHeader>
                 <nav className="flex flex-col justify-center items-center gap-2 mt-4">
                   {routeList.map(({ href, label }) => (
@@ -108,6 +118,54 @@ export const Navbar = () => {
                       {label}
                     </Link>
                   ))}
+                  <DropdownMenu>
+                    <DropdownMenuTrigger className="flex items-center gap-1 hover:underline underline-offset-4">
+                      Our Services
+                      <ChevronDown className="w-4 h-4" />
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent align="end">
+                      <DropdownMenuItem>
+                        <Link
+                          href="#life-insurance"
+                          className="flex items-center gap-2"
+                          prefetch={false}
+                        >
+                          <Shield className="w-4 h-4" />
+                          Life Insurance
+                        </Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem>
+                        <Link
+                          href="#medical-aid"
+                          className="flex items-center gap-2"
+                          prefetch={false}
+                        >
+                          <Heart className="w-4 h-4" />
+                          Medical Aid
+                        </Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem>
+                        <Link
+                          href="#car-home-insurance"
+                          className="flex items-center gap-2"
+                          prefetch={false}
+                        >
+                          <Car className="w-4 h-4" />
+                          Car & Home Insurance
+                        </Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem>
+                        <Link
+                          href="#investment"
+                          className="flex items-center gap-2"
+                          prefetch={false}
+                        >
+                          <TrendingUp className="w-4 h-4" />
+                          Investment
+                        </Link>
+                      </DropdownMenuItem>
+                    </DropdownMenuContent>
+                  </DropdownMenu>
                   <Link
                     href="https://github.com/leoMirandaa/shadcn-landing-page.git"
                     target="_blank"
@@ -125,7 +183,66 @@ export const Navbar = () => {
 
           {/* desktop */}
           <nav className="hidden md:flex gap-2">
-            {routeList.map((route, i) => (
+            {routeList.slice(0, 1).map((route, i) => (
+              <Link
+                href={route.href}
+                key={i}
+                className={`text-[17px] ${buttonVariants({
+                  variant: "ghost",
+                })}`}
+              >
+                {route.label}
+              </Link>
+            ))}
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center gap-1 hover:underline underline-offset-4">
+                Our Services
+                <ChevronDown className="w-4 h-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem>
+                  <Link
+                    href="#life-insurance"
+                    className="flex items-center gap-2"
+                    prefetch={false}
+                  >
+                    <Shield className="w-4 h-4" />
+                    Life Insurance
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link
+                    href="#medical-aid"
+                    className="flex items-center gap-2"
+                    prefetch={false}
+                  >
+                    <Heart className="w-4 h-4" />
+                    Medical Aid
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link
+                    href="#car-home-insurance"
+                    className="flex items-center gap-2"
+                    prefetch={false}
+                  >
+                    <Car className="w-4 h-4" />
+                    Car & Home Insurance
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link
+                    href="#investment"
+                    className="flex items-center gap-2"
+                    prefetch={false}
+                  >
+                    <TrendingUp className="w-4 h-4" />
+                    Investment
+                  </Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+            {routeList.slice(1).map((route, i) => (
               <Link
                 href={route.href}
                 key={i}

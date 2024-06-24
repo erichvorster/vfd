@@ -2,65 +2,136 @@
 
 import React from "react";
 import { Card, CardContent, CardHeader } from "../../components/ui/card";
-import Avatar from "../../components/ui/avatar";
-import Button from "../../components/ui/button";
-import Input from "../../components/ui/input";
-import Label from "../../components/ui/label";
+import { Avatar } from "../../components/ui/avatar";
+import { Button } from "../../components/ui/button";
+import { Input } from "../../components/ui/input";
+import { Label } from "../../components/ui/label";
 import Link from "next/link";
-import Textarea from "../../components/ui/textarea";
+import { Textarea } from "../../components/ui/textarea";
+import { Checkbox } from "../../components/ui/checkbox";
+
+import {
+  Hospital,
+  LifeBuoy,
+  Shield,
+  Briefcase,
+  Phone,
+  Mail,
+  Locate,
+} from "lucide-react";
+import { Navbar } from "../../components/NavBar";
 
 const page = () => {
   return (
-    <div className="space-y-8">
-      <div className="space-y-2">
-        <h2 className="text-3xl font-bold">Get in touch</h2>
-        <p className="text-gray-500 dark:text-gray-400">
-          Feel free to leave any enquiries below, or give us a call to speak
-          with our helpful sales team.
-        </p>
-      </div>
-      <div className="space-y-4">
-        <Card>
-          <CardHeader>
-            <h3 className="text-2xl font-bold">Contact Details</h3>
-          </CardHeader>
-          <CardContent>
+    <div>
+      <div className="mx-auto max-w-4xl space-y-8 py-12 md:py-16 lg:py-20">
+        <div className="space-y-4 text-center">
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+            Get in touch
+          </h2>
+          <p className="text-muted-foreground">
+            Have a question about our insurance or investment products? Fill out
+            the form and we&apos;ll get back to you as soon as possible.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12">
+          <div className="space-y-4">
+            <form className="space-y-6">
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <Label htmlFor="first-name">First name</Label>
+                  <Input id="first-name" placeholder="John" required />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="last-name">Last name</Label>
+                  <Input id="last-name" placeholder="Doe" required />
+                </div>
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="email">Email</Label>
+                <Input
+                  id="email"
+                  type="email"
+                  placeholder="john@example.com"
+                  required
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="phone">Phone</Label>
+                <Input
+                  id="phone"
+                  type="tel"
+                  placeholder="+1 (555) 555-5555"
+                  required
+                />
+              </div>
+              <div className="space-y-2">
+                <Label className="font-semibold">
+                  What are you interested in?
+                </Label>
+                <div className="grid gap-4 justify-between">
+                  <div className="flex items-center justify-between space-x-4">
+                    <div className="flex items-center space-x-2">
+                      <Hospital className="h-6 w-6" />
+                      <span>Health Insurance</span>
+                    </div>
+                    <Checkbox name="products" id="health-insurance" />
+                  </div>
+                  <div className="flex items-center justify-between space-x-4">
+                    <div className="flex items-center space-x-2">
+                      <LifeBuoy className="h-6 w-6" />
+                      <span>Life Insurance</span>
+                    </div>
+                    <Checkbox name="products" id="life-insurance" />
+                  </div>
+                  <div className="flex items-center justify-between space-x-4">
+                    <div className="flex items-center space-x-2">
+                      <Shield className="h-6 w-6" />
+                      <span>Short-Term Insurance</span>
+                    </div>
+                    <Checkbox name="products" id="short-term-insurance" />
+                  </div>
+                  <div className="flex items-center justify-between space-x-4">
+                    <div className="flex items-center space-x-2">
+                      <Briefcase className="h-6 w-6" />
+                      <span>Investment</span>
+                    </div>
+                    <Checkbox name="products" id="investment" />
+                  </div>
+                </div>
+              </div>
+              <Button type="submit" className="w-full">
+                Submit
+              </Button>
+            </form>
+          </div>
+          <div className="space-y-4">
             <div className="space-y-2">
+              <h3 className="text-2xl font-bold">Contact Us</h3>
+              <p className="text-muted-foreground">
+                Get in touch with our team for more information.
+              </p>
+            </div>
+            <div className="space-y-4">
               <div className="flex items-center space-x-2">
-                <Avatar prompt="postal address" className="w-4 h-4" />
-                <span>1234 Street, City, State, 56789</span>
+                <Phone className="h-6 w-6 text-primary" />
+                <a href="#" className="text-primary">
+                  +1 (555) 555-5555
+                </a>
               </div>
               <div className="flex items-center space-x-2">
-                <Avatar prompt="phone number" className="w-4 h-4" />
-                <span>(123) 456-7890</span>
+                <Mail className="h-6 w-6 text-primary" />
+                <a href="#" className="text-primary">
+                  info@example.com
+                </a>
               </div>
               <div className="flex items-center space-x-2">
-                <Avatar prompt="email address" className="w-4 h-4" />
-                <Link href="#">info@example.com</Link>
+                <Locate className="h-6 w-6 text-primary" />
+                <span>123 Main St, Anytown USA</span>
               </div>
             </div>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader>
-            <h3 className="text-2xl font-bold">Leave a Message</h3>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-2">
-              <Label htmlFor="name">Name</Label>
-              <Input id="name" placeholder="Enter your name" />
-              <Label htmlFor="email">Email</Label>
-              <Input id="email" placeholder="Enter your email" type="email" />
-              <Label htmlFor="message">Message</Label>
-              <Textarea
-                id="message"
-                placeholder="Enter your message"
-                className="min-h-[100px]"
-              />
-              <Button>Send message</Button>
-            </div>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
       </div>
     </div>
   );
