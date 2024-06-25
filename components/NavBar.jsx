@@ -35,19 +35,15 @@ import { ModeToggle } from "./ModeToggle";
 
 const routeList = [
   {
-    href: "#about",
+    href: "/#about",
     label: "About",
   },
   {
-    href: "#testimonials",
+    href: "/#testimonials",
     label: "Testimonials",
   },
   {
-    href: "#pricing",
-    label: "Pricing",
-  },
-  {
-    href: "#faq",
+    href: "/#faq",
     label: "FAQ",
   },
   {
@@ -126,7 +122,7 @@ export const Navbar = () => {
                     <DropdownMenuContent align="end">
                       <DropdownMenuItem>
                         <Link
-                          href="#life-insurance"
+                          href="/Life"
                           className="flex items-center gap-2"
                           prefetch={false}
                         >
@@ -202,7 +198,7 @@ export const Navbar = () => {
               <DropdownMenuContent align="end">
                 <DropdownMenuItem>
                   <Link
-                    href="#life-insurance"
+                    href="/Life"
                     className="flex items-center gap-2"
                     prefetch={false}
                   >
@@ -212,7 +208,7 @@ export const Navbar = () => {
                 </DropdownMenuItem>
                 <DropdownMenuItem>
                   <Link
-                    href="#medical-aid"
+                    href="/Health"
                     className="flex items-center gap-2"
                     prefetch={false}
                   >
@@ -222,7 +218,7 @@ export const Navbar = () => {
                 </DropdownMenuItem>
                 <DropdownMenuItem>
                   <Link
-                    href="#car-home-insurance"
+                    href="/Insure"
                     className="flex items-center gap-2"
                     prefetch={false}
                   >
@@ -232,7 +228,7 @@ export const Navbar = () => {
                 </DropdownMenuItem>
                 <DropdownMenuItem>
                   <Link
-                    href="#investment"
+                    href="/Invest"
                     className="flex items-center gap-2"
                     prefetch={false}
                   >

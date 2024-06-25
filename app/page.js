@@ -13,10 +13,9 @@ import { Products } from "../components/Products";
 import { Testimonials } from "../components/Testimonials";
 import { FAQ } from "../components/FAQ";
 
-export default function Home() {
+const Home = () => {
   return (
     <main className="">
-      <Navbar />
       <Hero />
       <Partners />
       <div id="about">
@@ -33,8 +32,9 @@ export default function Home() {
       <div id="testimonials">
         <Testimonials />
       </div>
-      <Footer />
       {/* <StockPrices /> */}
     </main>
   );
-}
+};
+
+export default Home;

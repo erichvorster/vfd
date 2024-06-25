@@ -19,7 +19,6 @@ import {
   Mail,
   Locate,
 } from "lucide-react";
-import { Navbar } from "../../components/NavBar";
 
 const page = () => {
   return (
