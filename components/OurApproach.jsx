@@ -28,21 +28,6 @@ export const OurApproach = () => {
           </div>
         ))}
       </div>
-      <div className="absolute inset-0 -bottom-0 left-0 -right-8 -z-50 hidden md:block">
-        <Image
-          src={trendLine}
-          alt="Trend Line"
-          layout="fill"
-          objectFit="cover"
-        />
-        <Image
-          src={trendLine}
-          alt="Trend Line"
-          layout="fill"
-          objectFit="cover"
-          className="m-2"
-        />
-      </div>
     </section>
   );
 };

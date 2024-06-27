@@ -35,16 +35,20 @@ import { ModeToggle } from "./ModeToggle";
 
 const routeList = [
   {
-    href: "/#about",
+    href: "/",
+    label: "Home",
+  },
+  {
+    href: "/About",
     label: "About",
   },
   {
-    href: "/#testimonials",
-    label: "Testimonials",
+    href: "/Services",
+    label: "Services",
   },
   {
-    href: "/#faq",
-    label: "FAQ",
+    href: "/Blog",
+    label: "Blog",
   },
   {
     href: "/Contact",
@@ -114,131 +118,21 @@ export const Navbar = () => {
                       {label}
                     </Link>
                   ))}
-                  <DropdownMenu>
-                    <DropdownMenuTrigger className="flex items-center gap-1 hover:underline underline-offset-4">
-                      Our Services
-                      <ChevronDown className="w-4 h-4" />
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent align="end">
-                      <DropdownMenuItem>
-                        <Link
-                          href="/Life"
-                          className="flex items-center gap-2"
-                          prefetch={false}
-                        >
-                          <Shield className="w-4 h-4" />
-                          Life Insurance
-                        </Link>
-                      </DropdownMenuItem>
-                      <DropdownMenuItem>
-                        <Link
-                          href="#medical-aid"
-                          className="flex items-center gap-2"
-                          prefetch={false}
-                        >
-                          <Heart className="w-4 h-4" />
-                          Medical Aid
-                        </Link>
-                      </DropdownMenuItem>
-                      <DropdownMenuItem>
-                        <Link
-                          href="#car-home-insurance"
-                          className="flex items-center gap-2"
-                          prefetch={false}
-                        >
-                          <Car className="w-4 h-4" />
-                          Car & Home Insurance
-                        </Link>
-                      </DropdownMenuItem>
-                      <DropdownMenuItem>
-                        <Link
-                          href="#investment"
-                          className="flex items-center gap-2"
-                          prefetch={false}
-                        >
-                          <TrendingUp className="w-4 h-4" />
-                          Investment
-                        </Link>
-                      </DropdownMenuItem>
-                    </DropdownMenuContent>
-                  </DropdownMenu>
+
                   <Link
-                    href="https://github.com/leoMirandaa/shadcn-landing-page.git"
-                    target="_blank"
+                    href="/Contact"
                     className={`w-[110px] border ${buttonVariants({
                       variant: "secondary",
                     })}`}
                   >
-                    {/* <GitHubLogoIcon className="mr-2 w-5 h-5" /> */}
-                    Github
+                    Contact
                   </Link>
                 </nav>
               </SheetContent>
             </Sheet>
           </div>
-
-          {/* desktop */}
           <nav className="hidden md:flex gap-2">
-            {routeList.slice(0, 1).map((route, i) => (
-              <Link
-                href={route.href}
-                key={i}
-                className={`text-[17px] ${buttonVariants({
-                  variant: "ghost",
-                })}`}
-              >
-                {route.label}
-              </Link>
-            ))}
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1 hover:underline underline-offset-4">
-                Our Services
-                <ChevronDown className="w-4 h-4" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                <DropdownMenuItem>
-                  <Link
-                    href="/Life"
-                    className="flex items-center gap-2"
-                    prefetch={false}
-                  >
-                    <Shield className="w-4 h-4" />
-                    Life Insurance
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Link
-                    href="/Health"
-                    className="flex items-center gap-2"
-                    prefetch={false}
-                  >
-                    <Heart className="w-4 h-4" />
-                    Medical Aid
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Link
-                    href="/Insure"
-                    className="flex items-center gap-2"
-                    prefetch={false}
-                  >
-                    <Car className="w-4 h-4" />
-                    Car & Home Insurance
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Link
-                    href="/Invest"
-                    className="flex items-center gap-2"
-                    prefetch={false}
-                  >
-                    <TrendingUp className="w-4 h-4" />
-                    Investment
-                  </Link>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-            {routeList.slice(1).map((route, i) => (
+            {routeList.map((route, i) => (
               <Link
                 href={route.href}
                 key={i}
@@ -252,15 +146,12 @@ export const Navbar = () => {
           </nav>
           <div className="hidden md:flex gap-2">
             <Link
-              href="https://github.com/leoMirandaa/shadcn-landing-page.git"
-              target="_blank"
+              href="/Contact"
               className={`border ${buttonVariants({ variant: "secondary" })}`}
             >
-              {/* <GitHubLogoIcon className="mr-2 w-5 h-5" /> */}
-              Github
+              Contact
             </Link>
             <ModeToggle />
-            {/* <ModeToggle /> */}
           </div>
         </NavigationMenuList>
       </NavigationMenu>

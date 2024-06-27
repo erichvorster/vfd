@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import family from "../../public/family.jpg";
+import Family from "../../public/";
 
 const Hero = () => {
   return (
@@ -30,7 +30,7 @@ const Hero = () => {
             </div>
           </div>
           <Image
-            src={family}
+            src={Family}
             width="550"
             height="550"
             alt="Life Insurance"
