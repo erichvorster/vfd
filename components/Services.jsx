@@ -8,8 +8,8 @@ export const Services = () => {
   return (
     <section className="w-full py-12 md:py-24 lg:py-32 bg-muted">
       <div className="container ">
-        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-primary mb-14">
-          How We Help
+        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl  mb-14">
+          How We Can Help You
         </h2>
         <div className="grid gap-8 px-4 md:px-6 lg:grid-cols-4 lg:gap-12">
           {services.map((service, index) => (
@@ -21,7 +21,7 @@ export const Services = () => {
                 {service.icon}
               </div>
               <div className="space-y-2">
-                <h3 className="text-xl font-bold transition-colors duration-300 ease-in-out group-hover:text-[#19a65b]">
+                <h3 className="text-xl font-bold transition-colors duration-300 ease-in-out ">
                   {service.title}
                 </h3>
                 <p className="text-muted-foreground">{service.description}</p>

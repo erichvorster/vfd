@@ -32,6 +32,7 @@ import {
 } from "lucide-react";
 import { ModeToggle } from "./ModeToggle";
 // import { LogoIcon } from "./Icons";
+import { Button } from "./ui/button";
 
 const routeList = [
   {
@@ -77,10 +78,8 @@ export const Navbar = () => {
 
   return (
     <div
-      className={`sticky top-0 z-40 w-full border-b-[1px] transition-all duration-500 ${
-        isScrolled
-          ? "bg-[#224c3a] dark:bg-[#224c3a] dark:border-b-[#224c3a] shadow-md"
-          : "bg-white dark:bg-background dark:border-b-slate-700 shadow-none"
+      className={`sticky top-0 z-40 w-full border-b-[1px] transition-all duration-500 bg-[#275f44] ${
+        isScrolled ? " shadow-md" : "  shadow-none"
       }`}
     >
       <NavigationMenu className="mx-auto">
@@ -145,12 +144,12 @@ export const Navbar = () => {
             ))}
           </nav>
           <div className="hidden md:flex gap-2">
-            <Link
+            <Button
               href="/Contact"
-              className={`border ${buttonVariants({ variant: "secondary" })}`}
+              className={` ${buttonVariants({ variant: "primary" })}`}
             >
               Contact
-            </Link>
+            </Button>
             <ModeToggle />
           </div>
         </NavigationMenuList>

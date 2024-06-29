@@ -13,14 +13,14 @@
       --popover: 0 0% 100%;
       --popover-foreground: 0 0% 3.9%;
 
-      --primary: 0 0% 9%;
+      --primary: 148, 74%, 37%;
       --primary-foreground: 0 0% 98%;
 
-      --secondary: 0 0% 96.1%;
+      --secondary: 44, 39%, 62%;
       --secondary-foreground: 0 0% 9%;
 
       --muted: 0 0% 96.1%;
-      --muted-foreground: 0 0% 45.1%;
+      --muted-foreground:  0 0% 63.9%;
 
       --accent: 0 0% 96.1%;
       --accent-foreground: 0 0% 9%;
@@ -79,3 +79,6 @@
       @apply bg-background text-foreground;
     }
   }
+
+
+  

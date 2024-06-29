@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const CTA = () => {
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32">
+    <section className="w-full py-12 md:py-24 lg:py-32 bg-[#19a65b] bg-opacity-20">
       <div className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
         <div className="space-y-2">
           <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">

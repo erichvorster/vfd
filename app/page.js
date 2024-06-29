@@ -18,20 +18,19 @@ const Home = () => {
     <main className="">
       <Hero />
       <Partners />
-      <div id="about">
-        <About />
-      </div>
+      <About />
+
       <Services />
-      <OurApproach />
+      {/* <OurApproach /> */}
       <WhyUs />
       <CTA />
-      <div id="faq">
-        <FAQ />
-      </div>
+
+      <FAQ />
+
       <Products />
-      <div id="testimonials">
-        <Testimonials />
-      </div>
+
+      <Testimonials />
+
       {/* <StockPrices /> */}
     </main>
   );
