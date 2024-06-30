@@ -33,6 +33,8 @@ import {
 import { ModeToggle } from "./ModeToggle";
 // import { LogoIcon } from "./Icons";
 import { Button } from "./ui/button";
+import Logo from "../public/logo.svg";
+import Image from "next/image";
 
 const routeList = [
   {
@@ -85,8 +87,11 @@ export const Navbar = () => {
       <NavigationMenu className="mx-auto">
         <NavigationMenuList className="container h-14 px-4 w-screen flex justify-between">
           <NavigationMenuItem className="font-bold flex">
-            <Link href="/" className="ml-2 font-bold text-xl flex">
-              VFD
+            <Link
+              href="/"
+              className="ml-2 font-bold text-xl flex text-white tracking-widest"
+            >
+              VBGFIN
             </Link>
           </NavigationMenuItem>
 

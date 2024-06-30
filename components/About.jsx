@@ -3,14 +3,15 @@ import AboutImg from "../public/about.svg";
 import Image from "next/image";
 import { Check, Sprout } from "lucide-react";
 import Chatting from "../public/chatting.jpg";
+import Logo from "../public/logo.svg";
 
 export const About = () => {
   return (
     <section className="w-full py-12 md:py-24 lg:py-32">
       <div className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
-        <div className="relative w-full   lg:rounded-md ">
+        <div className="relative w-full   lg:rounded-md bg-">
           <Image
-            src={Chatting}
+            src={Logo}
             alt="About Us"
             objectFit="cover"
             className="rounded-xl"

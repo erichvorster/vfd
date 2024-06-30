@@ -1,10 +1,10 @@
-import { Inter } from "next/font/google";
+import { PT_Serif } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "../components/ThemeProvider";
 import { Navbar } from "../components/NavBar";
 import { Footer } from "../components/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const ptSerif = PT_Serif({ subsets: ["latin"], weight: ["400", "700"] });
 
 export const metadata = {
   title: "Create Next App",
@@ -14,7 +14,7 @@ export const metadata = {
 const RootLayout = ({ children }) => {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={ptSerif.className}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
