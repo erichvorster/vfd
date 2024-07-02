@@ -3,7 +3,7 @@ import AboutImg from "../public/about.svg";
 import Image from "next/image";
 import { Check, Sprout } from "lucide-react";
 import Chatting from "../public/chatting.jpg";
-import Logo from "../public/logo.svg";
+import Logo from "../public/Logo.svg";
 
 export const About = () => {
   return (
