@@ -31,10 +31,8 @@ import {
   TrendingUp,
 } from "lucide-react";
 import { ModeToggle } from "./ModeToggle";
-// import { LogoIcon } from "./Icons";
 import { Button } from "./ui/button";
-import Logo from "../public/logo.svg";
-import Image from "next/image";
+
 
 const routeList = [
   {
