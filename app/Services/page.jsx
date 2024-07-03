@@ -9,6 +9,17 @@ import {
   InfoIcon,
   BusIcon,
   SchoolIcon,
+  ShieldIcon, // Long-term insurance
+  BarChartIcon, // Investments
+  HeartIcon, // Medical funds
+  SlidersIcon, // Gap cover
+  FileTextIcon, // Short-term insurance
+  GlobeIcon, // Will
+  ScrollIcon,
+  HandCoins,
+  HandCoinsIcon,
+  CarIcon,
+  HospitalIcon,
 } from "lucide-react";
 import { Partners } from "../../components/Partners";
 import CTA from "../../components/CTA";
@@ -29,12 +40,12 @@ const page = () => {
           </div>
           <div className="mx-auto mt-10 grid max-w-5xl grid-cols-2 gap-4 sm:grid-cols-4 md:gap-6 lg:gap-8">
             <Link
-              href="#retirement-planning"
+              href="#long-term-insurance"
               className="group flex flex-col items-center justify-center rounded-lg bg-background p-4 text-center transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
               prefetch={false}
             >
-              <RecycleIcon className="h-8 w-8 text-primary" />
-              <h3 className="mt-2 text-sm font-medium">Retirement Planning</h3>
+              <ShieldIcon className="h-8 w-8 text-primary" />
+              <h3 className="mt-2 text-sm font-medium">Long-term Insurance</h3>
             </Link>
             <Link
               href="#investment-management"
@@ -47,12 +58,28 @@ const page = () => {
               </h3>
             </Link>
             <Link
-              href="#tax-planning"
+              href="#medical-funds"
               className="group flex flex-col items-center justify-center rounded-lg bg-background p-4 text-center transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
               prefetch={false}
             >
-              <CurrencyIcon className="h-8 w-8 text-primary" />
-              <h3 className="mt-2 text-sm font-medium">Tax Planning</h3>
+              <HeartIcon className="h-8 w-8 text-primary" />
+              <h3 className="mt-2 text-sm font-medium">Medical Funds</h3>
+            </Link>
+            <Link
+              href="#gap-cover"
+              className="group flex flex-col items-center justify-center rounded-lg bg-background p-4 text-center transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+              prefetch={false}
+            >
+              <HospitalIcon className="h-8 w-8 text-primary" />
+              <h3 className="mt-2 text-sm font-medium">Gap Cover</h3>
+            </Link>
+            <Link
+              href="#short-term-insurance"
+              className="group flex flex-col items-center justify-center rounded-lg bg-background p-4 text-center transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+              prefetch={false}
+            >
+              <CarIcon className="h-8 w-8 text-primary" />
+              <h3 className="mt-2 text-sm font-medium">Short-term Insurance</h3>
             </Link>
             <Link
               href="#estate-planning"
@@ -63,54 +90,37 @@ const page = () => {
               <h3 className="mt-2 text-sm font-medium">Estate Planning</h3>
             </Link>
             <Link
-              href="#risk-management"
+              href="#will"
               className="group flex flex-col items-center justify-center rounded-lg bg-background p-4 text-center transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
               prefetch={false}
             >
-              <RatioIcon className="h-8 w-8 text-primary" />
-              <h3 className="mt-2 text-sm font-medium">Risk Management</h3>
+              <ScrollIcon className="h-8 w-8 text-primary" />
+              <h3 className="mt-2 text-sm font-medium">Will</h3>
             </Link>
             <Link
-              href="#insurance-planning"
+              href="#retirement-planning"
               className="group flex flex-col items-center justify-center rounded-lg bg-background p-4 text-center transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
               prefetch={false}
             >
-              <InfoIcon className="h-8 w-8 text-primary" />
-              <h3 className="mt-2 text-sm font-medium">Insurance Planning</h3>
-            </Link>
-            <Link
-              href="#business-planning"
-              className="group flex flex-col items-center justify-center rounded-lg bg-background p-4 text-center transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-              prefetch={false}
-            >
-              <BusIcon className="h-8 w-8 text-primary" />
-              <h3 className="mt-2 text-sm font-medium">Business Planning</h3>
-            </Link>
-            <Link
-              href="#education-planning"
-              className="group flex flex-col items-center justify-center rounded-lg bg-background p-4 text-center transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-              prefetch={false}
-            >
-              <SchoolIcon className="h-8 w-8 text-primary" />
-              <h3 className="mt-2 text-sm font-medium">Education Planning</h3>
+              <RecycleIcon className="h-8 w-8 text-primary" />
+              <h3 className="mt-2 text-sm font-medium">Retirement Planning</h3>
             </Link>
           </div>
         </div>
       </section>
       <Partners />
-      <section id="retirement-planning" className="py-12 md:py-24 lg:py-32">
+      <section id="long-term-insurance" className="py-12 md:py-24 lg:py-32">
         <div className="container px-4 md:px-6">
           <div className="mx-auto max-w-4xl">
             <div className="flex items-center gap-4">
-              <RecycleIcon className="h-10 w-10 text-primary" />
-              <h2 className="text-2xl font-bold">Retirement Planning</h2>
+              <ShieldIcon className="h-10 w-10 text-primary" />
+              <h2 className="text-2xl font-bold">Long-term Insurance</h2>
             </div>
             <p className="mt-4 text-muted-foreground md:text-xl">
-              Our retirement planning services help you create a personalized
-              strategy to ensure a comfortable and secure retirement. We
-              consider your current financial situation, goals, and risk
-              tolerance to develop a plan that maximizes your savings and
-              investments.
+              Our long-term insurance services provide you with the peace of
+              mind that comes from knowing you're covered for the long haul.
+              Whether it's life insurance, disability insurance, or long-term
+              care insurance, we have the solutions to meet your needs.
             </p>
           </div>
         </div>
@@ -136,19 +146,50 @@ const page = () => {
           </div>
         </div>
       </section>
-      <section id="tax-planning" className="py-12 md:py-24 lg:py-32">
+      <section id="medical-funds" className="py-12 md:py-24 lg:py-32">
         <div className="container px-4 md:px-6">
           <div className="mx-auto max-w-4xl">
             <div className="flex items-center gap-4">
-              <CurrencyIcon className="h-10 w-10 text-primary" />
-              <h2 className="text-2xl font-bold">Tax Planning</h2>
+              <HeartIcon className="h-10 w-10 text-primary" />
+              <h2 className="text-2xl font-bold">Medical Funds</h2>
             </div>
             <p className="mt-4 text-muted-foreground md:text-xl">
-              Our tax planning services help you minimize your tax liability and
-              maximize your savings. We work closely with you to understand your
-              unique financial situation and develop strategies to optimize your
-              tax position, whether it's minimizing your income tax, capital
-              gains tax, or estate tax.
+              Our medical funds services ensure that you have the necessary
+              coverage for all your healthcare needs. We help you choose the
+              right medical fund that suits your requirements and budget,
+              providing peace of mind in times of medical need.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section id="gap-cover" className="py-12 md:py-24 lg:py-32 bg-muted">
+        <div className="container px-4 md:px-6">
+          <div className="mx-auto max-w-4xl">
+            <div className="flex items-center gap-4">
+              <HospitalIcon className="h-10 w-10 text-primary" />
+              <h2 className="text-2xl font-bold">Gap Cover</h2>
+            </div>
+            <p className="mt-4 text-muted-foreground md:text-xl">
+              Our gap cover services bridge the financial gap between what your
+              medical fund pays and the actual cost of healthcare. We ensure you
+              have the necessary cover to handle unexpected medical expenses
+              without financial strain.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section id="short-term-insurance" className="py-12 md:py-24 lg:py-32">
+        <div className="container px-4 md:px-6">
+          <div className="mx-auto max-w-4xl">
+            <div className="flex items-center gap-4">
+              <CarIcon className="h-10 w-10 text-primary" />
+              <h2 className="text-2xl font-bold">Short-term Insurance</h2>
+            </div>
+            <p className="mt-4 text-muted-foreground md:text-xl">
+              Our short-term insurance services provide you with the coverage
+              you need for your home, car, and other personal belongings. We
+              offer a range of policies to protect you against loss, damage, or
+              theft, ensuring you're covered for all eventualities.
             </p>
           </div>
         </div>
@@ -173,76 +214,39 @@ const page = () => {
           </div>
         </div>
       </section>
-      <section id="risk-management" className="py-12 md:py-24 lg:py-32">
+      <section id="will" className="py-12 md:py-24 lg:py-32">
         <div className="container px-4 md:px-6">
           <div className="mx-auto max-w-4xl">
             <div className="flex items-center gap-4">
-              <RatioIcon className="h-10 w-10 text-primary" />
-              <h2 className="text-2xl font-bold">Risk Management</h2>
+              <ScrollIcon className="h-10 w-10 text-primary" />
+              <h2 className="text-2xl font-bold">Will</h2>
             </div>
             <p className="mt-4 text-muted-foreground md:text-xl">
-              Our risk management services help you identify, assess, and
-              mitigate potential risks to your financial well-being. We develop
-              customized strategies to protect your assets, income, and family
-              from unexpected events, ensuring you're prepared for the
-              unexpected.
+              Our will services help you draft a clear and legally binding
+              document that outlines your wishes for your estate. We ensure your
+              will is comprehensive and reflects your desires, providing peace
+              of mind that your loved ones are taken care of according to your
+              intentions.
             </p>
           </div>
         </div>
       </section>
       <section
-        id="insurance-planning"
+        id="retirement-planning"
         className="py-12 md:py-24 lg:py-32 bg-muted"
       >
         <div className="container px-4 md:px-6">
           <div className="mx-auto max-w-4xl">
             <div className="flex items-center gap-4">
-              <InfoIcon className="h-10 w-10 text-primary" />
-              <h2 className="text-2xl font-bold">Insurance Planning</h2>
+              <HandCoinsIcon className="h-10 w-10 text-primary" />
+              <h2 className="text-2xl font-bold">Retirement Planning</h2>
             </div>
             <p className="mt-4 text-muted-foreground md:text-xl">
-              Our insurance planning services help you protect your family and
-              assets with the right insurance coverage. We analyze your unique
-              needs and recommend the appropriate life, disability, long-term
-              care, and other insurance policies to ensure you're covered in the
-              event of unexpected circumstances.
-            </p>
-          </div>
-        </div>
-      </section>
-      <section id="business-planning" className="py-12 md:py-24 lg:py-32">
-        <div className="container px-4 md:px-6">
-          <div className="mx-auto max-w-4xl">
-            <div className="flex items-center gap-4">
-              <BusIcon className="h-10 w-10 text-primary" />
-              <h2 className="text-2xl font-bold">Business Planning</h2>
-            </div>
-            <p className="mt-4 text-muted-foreground md:text-xl">
-              Our business planning services help you navigate the complex
-              financial landscape of running a business. We assist with
-              strategic planning, financial management, tax optimization, and
-              succession planning to ensure the long-term success and
-              sustainability of your business.
-            </p>
-          </div>
-        </div>
-      </section>
-      <section
-        id="education-planning"
-        className="py-12 md:py-24 lg:py-32 bg-muted"
-      >
-        <div className="container px-4 md:px-6">
-          <div className="mx-auto max-w-4xl">
-            <div className="flex items-center gap-4">
-              <SchoolIcon className="h-10 w-10 text-primary" />
-              <h2 className="text-2xl font-bold">Education Planning</h2>
-            </div>
-            <p className="mt-4 text-muted-foreground md:text-xl">
-              Our education planning services help you prepare for the financial
-              challenges of funding your children's education. We work with you
-              to develop a comprehensive strategy that incorporates college
-              savings, financial aid, and other educational funding options to
-              ensure your family's educational goals are met.
+              Our retirement planning services help you create a personalized
+              strategy to ensure a comfortable and secure retirement. We
+              consider your current financial situation, goals, and risk
+              tolerance to develop a plan that maximizes your savings and
+              investments.
             </p>
           </div>
         </div>

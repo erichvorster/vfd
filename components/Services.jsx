@@ -1,14 +1,24 @@
 "use client";
 
 import React from "react";
-import { PiggyBank, Car, Hospital, LifeBuoy, ArrowRight } from "lucide-react";
+import {
+  PiggyBankIcon,
+  CarIcon,
+  HospitalIcon,
+  ShieldIcon,
+  ScrollIcon,
+  HandCoinsIcon,
+  CastleIcon,
+  HeartIcon,
+} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export const Services = () => {
   return (
     <section className="w-full py-12 md:py-24 lg:py-32 bg-muted">
-      <div className="container ">
-        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl  mb-14">
+      <div className="container">
+        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-14">
           How We Can Help You
         </h2>
         <div className="grid gap-8 px-4 md:px-6 lg:grid-cols-4 lg:gap-12">
@@ -44,31 +54,59 @@ export const Services = () => {
 
 const services = [
   {
-    icon: <PiggyBank className="h-6 w-6" />,
-    title: "Investment Planning",
+    icon: <ShieldIcon className="h-6 w-6" />,
+    title: "Long-term Insurance",
     description:
-      "Maximize your returns with our expert investment planning services. We provide tailored strategies to help you achieve your financial goals.",
-    link: "#",
+      "Ensure lifelong coverage with our comprehensive long-term insurance plans.",
+    link: "#long-term-insurance",
   },
   {
-    icon: <Hospital className="h-6 w-6" />,
-    title: "Medical Aid Insurance",
+    icon: <PiggyBankIcon className="h-6 w-6" />,
+    title: "Investment Management",
     description:
-      "Ensure you have the best medical coverage for you and your family with our comprehensive medical aid insurance plans.",
-    link: "#",
+      "Maximize your returns with our expert investment planning services.",
+    link: "#investment-management",
   },
   {
-    icon: <Car className="h-6 w-6" />,
-    title: "Short Term Insurance (Car and Home)",
+    icon: <HeartIcon className="h-6 w-6" />,
+    title: "Medical Funds",
     description:
-      "Protect your valuable assets with our reliable short term insurance solutions for your car and home.",
-    link: "#",
+      "Ensure the best medical coverage for you and your family with our plans.",
+    link: "/Services#medical-funds",
   },
   {
-    icon: <LifeBuoy className="h-6 w-6" />,
-    title: "Life Insurance",
+    icon: <HospitalIcon className="h-6 w-6" />,
+    title: "Gap Cover",
     description:
-      "Secure your family's future with our life insurance policies, designed to provide financial stability in times of need.",
-    link: "#",
+      "Bridge the gap between medical fund payouts and actual healthcare costs.",
+    link: "#gap-cover",
+  },
+  {
+    icon: <CarIcon className="h-6 w-6" />,
+    title: "Short-term Insurance",
+    description:
+      "Protect your car and home with our reliable short-term insurance solutions.",
+    link: "#short-term-insurance",
+  },
+  {
+    icon: <CastleIcon className="h-6 w-6" />,
+    title: "Estate Planning",
+    description:
+      "Safeguard your assets and ensure your wishes are honored with our estate planning services.",
+    link: "#estate-planning",
+  },
+  {
+    icon: <ScrollIcon className="h-6 w-6" />,
+    title: "Will",
+    description:
+      "Draft a clear and legally binding will to ensure your estate is managed according to your wishes.",
+    link: "#will",
+  },
+  {
+    icon: <HandCoinsIcon className="h-6 w-6" />,
+    title: "Retirement Planning",
+    description:
+      "Plan a secure and comfortable retirement with our personalized strategies.",
+    link: "#retirement-planning",
   },
 ];
