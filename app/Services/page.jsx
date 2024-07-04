@@ -27,10 +27,10 @@ import CTA from "../../components/CTA";
 const page = () => {
   return (
     <div className="w-full">
-      <section className="bg-muted py-12 md:py-24 lg:py-32">
+      <section className="bg-[#275f44] py-12 md:py-24 lg:py-32">
         <div className="container px-4 md:px-6">
           <div className="mx-auto max-w-4xl text-center">
-            <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+            <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-white">
               Our Financial Services
             </h1>
             <p className="mt-4 text-muted-foreground md:text-xl">
@@ -41,68 +41,68 @@ const page = () => {
           <div className="mx-auto mt-10 grid max-w-5xl grid-cols-2 gap-4 sm:grid-cols-4 md:gap-6 lg:gap-8">
             <Link
               href="#long-term-insurance"
-              className="group flex flex-col items-center justify-center rounded-lg bg-background p-4 text-center transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+              className="drop-shadow-xl shadow-black/10 dark:shadow-white/10 group flex flex-col items-center justify-center rounded-lg bg-background p-4 text-center transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
               prefetch={false}
             >
-              <ShieldIcon className="h-8 w-8 text-primary" />
+              <ShieldIcon className="h-8 w-8 text-[#c4b078]" />
               <h3 className="mt-2 text-sm font-medium">Long-term Insurance</h3>
             </Link>
             <Link
               href="#investment-management"
-              className="group flex flex-col items-center justify-center rounded-lg bg-background p-4 text-center transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+              className="drop-shadow-xl shadow-black/10 dark:shadow-white/10 group flex flex-col items-center justify-center rounded-lg bg-background p-4 text-center transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
               prefetch={false}
             >
-              <PiggyBankIcon className="h-8 w-8 text-primary" />
+              <PiggyBankIcon className="h-8 w-8 text-[#c4b078]" />
               <h3 className="mt-2 text-sm font-medium">
                 Investment Management
               </h3>
             </Link>
             <Link
               href="#medical-funds"
-              className="group flex flex-col items-center justify-center rounded-lg bg-background p-4 text-center transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+              className="drop-shadow-xl shadow-black/10 dark:shadow-white/10 group flex flex-col items-center justify-center rounded-lg bg-background p-4 text-center transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
               prefetch={false}
             >
-              <HeartIcon className="h-8 w-8 text-primary" />
+              <HeartIcon className="h-8 w-8 text-[#c4b078]" />
               <h3 className="mt-2 text-sm font-medium">Medical Funds</h3>
             </Link>
             <Link
               href="#gap-cover"
-              className="group flex flex-col items-center justify-center rounded-lg bg-background p-4 text-center transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+              className="drop-shadow-xl shadow-black/10 dark:shadow-white/10 group flex flex-col items-center justify-center rounded-lg bg-background p-4 text-center transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
               prefetch={false}
             >
-              <HospitalIcon className="h-8 w-8 text-primary" />
+              <HospitalIcon className="h-8 w-8 text-[#c4b078]" />
               <h3 className="mt-2 text-sm font-medium">Gap Cover</h3>
             </Link>
             <Link
               href="#short-term-insurance"
-              className="group flex flex-col items-center justify-center rounded-lg bg-background p-4 text-center transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+              className="drop-shadow-xl shadow-black/10 dark:shadow-white/10 group flex flex-col items-center justify-center rounded-lg bg-background p-4 text-center transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
               prefetch={false}
             >
-              <CarIcon className="h-8 w-8 text-primary" />
+              <CarIcon className="h-8 w-8 text-[#c4b078]" />
               <h3 className="mt-2 text-sm font-medium">Short-term Insurance</h3>
             </Link>
             <Link
               href="#estate-planning"
-              className="group flex flex-col items-center justify-center rounded-lg bg-background p-4 text-center transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+              className="drop-shadow-xl shadow-black/10 dark:shadow-white/10 group flex flex-col items-center justify-center rounded-lg bg-background p-4 text-center transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
               prefetch={false}
             >
-              <CastleIcon className="h-8 w-8 text-primary" />
+              <CastleIcon className="h-8 w-8 text-[#c4b078]" />
               <h3 className="mt-2 text-sm font-medium">Estate Planning</h3>
             </Link>
             <Link
               href="#will"
-              className="group flex flex-col items-center justify-center rounded-lg bg-background p-4 text-center transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+              className="drop-shadow-xl shadow-black/10 dark:shadow-white/10 group flex flex-col items-center justify-center rounded-lg bg-background p-4 text-center transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
               prefetch={false}
             >
-              <ScrollIcon className="h-8 w-8 text-primary" />
+              <ScrollIcon className="h-8 w-8 text-[#c4b078]" />
               <h3 className="mt-2 text-sm font-medium">Will</h3>
             </Link>
             <Link
               href="#retirement-planning"
-              className="group flex flex-col items-center justify-center rounded-lg bg-background p-4 text-center transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+              className="drop-shadow-xl shadow-black/10 dark:shadow-white/10 group flex flex-col items-center justify-center rounded-lg bg-background p-4 text-center transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
               prefetch={false}
             >
-              <RecycleIcon className="h-8 w-8 text-primary" />
+              <RecycleIcon className="h-8 w-8 text-[#c4b078]" />
               <h3 className="mt-2 text-sm font-medium">Retirement Planning</h3>
             </Link>
           </div>

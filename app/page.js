@@ -21,13 +21,12 @@ const Home = () => {
       <About />
 
       <Services />
+      <Products />
       {/* <OurApproach /> */}
       <WhyUs />
       <CTA />
 
       <FAQ />
-
-      <Products />
 
       <Testimonials />
 
