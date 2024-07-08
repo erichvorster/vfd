@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { motion } from "framer-motion";
 import {
   PiggyBankIcon,
   CarIcon,
@@ -14,38 +15,66 @@ import {
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1, // Reduced delay for faster stagger
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.3 } }, // Reduced duration for faster animation
+};
+
 export const Services = () => {
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-muted">
+    <motion.section
+      className="w-full py-12 md:py-24 lg:py-32 bg-muted"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={containerVariants}
+    >
       <div className="container">
-        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-14">
+        <motion.h2
+          className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-14"
+          variants={itemVariants}
+        >
           How We Can Help You
-        </h2>
-        <div className="grid gap-8 px-4 md:px-6 lg:grid-cols-4 lg:gap-12">
+        </motion.h2>
+        <motion.div
+          className="grid gap-8 px-4 md:px-6 lg:grid-cols-4 lg:gap-12"
+          variants={containerVariants}
+        >
           {services.map((service, index) => (
-            <Link
-              key={index}
-              href={service.link}
-              className="group space-y-4 p-4 rounded-lg transition-all duration-300 ease-in-out hover:bg-[#19a65b] hover:bg-opacity-20 cursor-pointer block"
-            >
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#275f44] text-[#c4b078]">
-                {service.icon}
-              </div>
-              <div className="space-y-2">
-                <h3 className="text-xl font-bold transition-colors duration-300 ease-in-out ">
-                  {service.title}
-                </h3>
-                <p className="text-muted-foreground">{service.description}</p>
-              </div>
-              <div className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline">
-                Learn More
-                <ArrowRight className="h-4 w-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1" />
-              </div>
-            </Link>
+            <motion.div key={index} variants={itemVariants}>
+              <Link
+                href={service.link}
+                className="group space-y-4 p-4 rounded-lg transition-all duration-300 ease-in-out hover:bg-[#19a65b] hover:bg-opacity-20 cursor-pointer block"
+              >
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#275f44] text-[#c4b078]">
+                  {service.icon}
+                </div>
+                <div className="space-y-2">
+                  <h3 className="text-xl font-bold transition-colors duration-300 ease-in-out">
+                    {service.title}
+                  </h3>
+                  <p className="text-muted-foreground">{service.description}</p>
+                </div>
+                <div className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline">
+                  Learn More
+                  <ArrowRight className="h-4 w-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1" />
+                </div>
+              </Link>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

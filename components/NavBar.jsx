@@ -33,7 +33,6 @@ import {
 import { ModeToggle } from "./ModeToggle";
 import { Button } from "./ui/button";
 
-
 const routeList = [
   {
     href: "/",
@@ -138,7 +137,7 @@ export const Navbar = () => {
               <Link
                 href={route.href}
                 key={i}
-                className={`text-[17px] ${buttonVariants({
+                className={`text-[18px] text-white ${buttonVariants({
                   variant: "ghost",
                 })}`}
               >
