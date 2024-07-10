@@ -2,127 +2,85 @@ import React from "react";
 
 const OurTeam = () => {
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-muted">
-      <div className="container grid grid-cols-1 gap-6 px-4 md:grid-cols-2 lg:grid-cols-3 md:px-6">
-        <h2 className="col-span-full text-3xl font-bold text-center">
-          Our Team
-        </h2>
-        <div className="relative overflow-hidden rounded-lg shadow-lg group hover:scale-105 transition-transform duration-300 ease-in-out">
-          <div className="absolute inset-0 bg-primary opacity-0 group-hover:opacity-50 transition-opacity duration-300" />
-          <div className="p-6">
-            <img
-              src="/placeholder.svg"
-              alt="Team Member"
-              width={100}
-              height={100}
-              className="mx-auto mb-4 rounded-full"
-            />
-            <h3 className="text-xl font-bold text-center">John Doe</h3>
-            <p className="text-center text-muted-foreground">
-              Financial Advisor
-            </p>
-            <p className="mt-4 text-center text-sm text-muted-foreground">
-              John has over 15 years of experience in the financial industry,
-              specializing in investment planning and wealth management.
-            </p>
-          </div>
+    <section className="w-full py-12 md:py-24 lg:py-32">
+      <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6 lg:gap-10">
+        <div className="space-y-3">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+            Meet Our Team
+          </h2>
+          <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            We are a passionate team of designers, developers, and strategists
+            dedicated to creating exceptional digital experiences.
+          </p>
         </div>
-        <div className="relative overflow-hidden rounded-lg shadow-lg group hover:scale-105 transition-transform duration-300 ease-in-out">
-          <div className="absolute inset-0 bg-primary opacity-0 group-hover:opacity-50 transition-opacity duration-300" />
-          <div className="p-6">
+        <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <div className="flex flex-col items-center justify-center gap-4 rounded-lg bg-background p-6 shadow-lg">
             <img
               src="/placeholder.svg"
               alt="Team Member"
-              width={100}
-              height={100}
-              className="mx-auto mb-4 rounded-full"
+              width={120}
+              height={120}
+              className="h-30 w-30 rounded-full object-cover"
             />
-            <h3 className="text-xl font-bold text-center">Jane Smith</h3>
-            <p className="text-center text-muted-foreground">
-              Financial Planner
-            </p>
-            <p className="mt-4 text-center text-sm text-muted-foreground">
-              Jane has a strong background in financial planning, helping
-              clients achieve their long-term financial goals.
-            </p>
+            <div className="grid gap-1 text-center">
+              <h3 className="text-xl font-bold">John Doe</h3>
+              <p className="text-muted-foreground">Lead Designer</p>
+              <p className="text-sm text-muted-foreground">
+                John is our lead designer with over 10 years of experience
+                crafting beautiful and user-friendly interfaces.
+              </p>
+            </div>
           </div>
-        </div>
-        <div className="relative overflow-hidden rounded-lg shadow-lg group hover:scale-105 transition-transform duration-300 ease-in-out">
-          <div className="absolute inset-0 bg-primary opacity-0 group-hover:opacity-50 transition-opacity duration-300" />
-          <div className="p-6">
+          <div className="flex flex-col items-center justify-center gap-4 rounded-lg bg-background p-6 shadow-lg">
             <img
               src="/placeholder.svg"
               alt="Team Member"
-              width={100}
-              height={100}
-              className="mx-auto mb-4 rounded-full"
+              width={120}
+              height={120}
+              className="h-30 w-30 rounded-full object-cover"
             />
-            <h3 className="text-xl font-bold text-center">Michael Johnson</h3>
-            <p className="text-center text-muted-foreground">Wealth Manager</p>
-            <p className="mt-4 text-center text-sm text-muted-foreground">
-              Michael has extensive experience in wealth management, helping
-              clients grow and protect their assets.
-            </p>
+            <div className="grid gap-1 text-center">
+              <h3 className="text-xl font-bold">Jane Smith</h3>
+              <p className="text-muted-foreground">Front-end Developer</p>
+              <p className="text-sm text-muted-foreground">
+                Jane is our front-end wizard, specializing in building
+                responsive and accessible web applications.
+              </p>
+            </div>
           </div>
-        </div>
-        <div className="relative overflow-hidden rounded-lg shadow-lg group hover:scale-105 transition-transform duration-300 ease-in-out">
-          <div className="absolute inset-0 bg-primary opacity-0 group-hover:opacity-50 transition-opacity duration-300" />
-          <div className="p-6">
+          <div className="flex flex-col items-center justify-center gap-4 rounded-lg bg-background p-6 shadow-lg">
             <img
               src="/placeholder.svg"
               alt="Team Member"
-              width={100}
-              height={100}
-              className="mx-auto mb-4 rounded-full"
+              width={120}
+              height={120}
+              className="h-30 w-30 rounded-full object-cover"
             />
-            <h3 className="text-xl font-bold text-center">Emily Davis</h3>
-            <p className="text-center text-muted-foreground">
-              Financial Analyst
-            </p>
-            <p className="mt-4 text-center text-sm text-muted-foreground">
-              Emily's analytical skills and attention to detail make her a
-              valuable asset to the team.
-            </p>
+            <div className="grid gap-1 text-center">
+              <h3 className="text-xl font-bold">Michael Johnson</h3>
+              <p className="text-muted-foreground">Back-end Developer</p>
+              <p className="text-sm text-muted-foreground">
+                Michael is our back-end expert, ensuring our applications are
+                secure, scalable, and efficient.
+              </p>
+            </div>
           </div>
-        </div>
-        <div className="relative overflow-hidden rounded-lg shadow-lg group hover:scale-105 transition-transform duration-300 ease-in-out">
-          <div className="absolute inset-0 bg-primary opacity-0 group-hover:opacity-50 transition-opacity duration-300" />
-          <div className="p-6">
+          <div className="flex flex-col items-center justify-center gap-4 rounded-lg bg-background p-6 shadow-lg">
             <img
               src="/placeholder.svg"
               alt="Team Member"
-              width={100}
-              height={100}
-              className="mx-auto mb-4 rounded-full"
+              width={120}
+              height={120}
+              className="h-30 w-30 rounded-full object-cover"
             />
-            <h3 className="text-xl font-bold text-center">David Lee</h3>
-            <p className="text-center text-muted-foreground">
-              Portfolio Manager
-            </p>
-            <p className="mt-4 text-center text-sm text-muted-foreground">
-              David's expertise in portfolio management helps our clients
-              achieve their financial goals.
-            </p>
-          </div>
-        </div>
-        <div className="relative overflow-hidden rounded-lg shadow-lg group hover:scale-105 transition-transform duration-300 ease-in-out">
-          <div className="absolute inset-0 bg-primary opacity-0 group-hover:opacity-50 transition-opacity duration-300" />
-          <div className="p-6">
-            <img
-              src="/placeholder.svg"
-              alt="Team Member"
-              width={100}
-              height={100}
-              className="mx-auto mb-4 rounded-full"
-            />
-            <h3 className="text-xl font-bold text-center">Sarah Chen</h3>
-            <p className="text-center text-muted-foreground">
-              Financial Advisor
-            </p>
-            <p className="mt-4 text-center text-sm text-muted-foreground">
-              Sarah's personalized approach and deep understanding of financial
-              planning make her a trusted advisor.
-            </p>
+            <div className="grid gap-1 text-center">
+              <h3 className="text-xl font-bold">Emily Davis</h3>
+              <p className="text-muted-foreground">Product Manager</p>
+              <p className="text-sm text-muted-foreground">
+                Emily is our product manager, ensuring our solutions meet the
+                needs of our clients and users.
+              </p>
+            </div>
           </div>
         </div>
       </div>

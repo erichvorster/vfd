@@ -1,13 +1,13 @@
 import React from "react";
-import About from "../../public/about_us.jpg";
+import Logo from "../../public/Logo.svg";
 import Image from "next/image";
 
 const Hero = () => {
   return (
     <section className="w-full py-12 md:py-24 lg:py-32">
       <div className="container px-4 md:px-6">
-        <div className="grid gap-10 lg:grid-cols-2 lg:gap-20">
-          <div className="space-y-4">
+        <div className="grid gap-10 lg:grid-cols-2 lg:gap-20 ">
+          <div className="space-y-4 pt-12">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
               About Our Firm
             </h2>
@@ -24,11 +24,11 @@ const Hero = () => {
           </div>
           <div>
             <Image
-              src={About}
+              src={Logo}
               width="550"
-              height="310"
+              height="550"
               alt="About Us"
-              className="mx-auto aspect-video overflow-hidden rounded-md object-cover object-center sm:w-full"
+              className="mx-auto  overflow-hidden rounded-md object-center sm:w-full"
             />
           </div>
         </div>

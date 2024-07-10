@@ -3,7 +3,7 @@ import { ServerIcon, InfinityIcon, InfoIcon } from "lucide-react";
 
 const Mission = () => {
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-muted">
+    <section className="w-full py-12 md:py-24 lg:py-32 bg-[#19a65b] bg-opacity-20">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-6 text-center">
           <div className="space-y-2">
@@ -20,7 +20,7 @@ const Mission = () => {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="flex flex-col items-center gap-2">
-              <InfinityIcon className="h-8 w-8 text-primary" />
+              <InfinityIcon className="h-8 w-8 text-[#c4b078]" />
               <h3 className="text-lg font-semibold">Integrity</h3>
               <p className="text-muted-foreground text-sm">
                 We uphold the highest standards of ethical conduct, always
@@ -28,7 +28,7 @@ const Mission = () => {
               </p>
             </div>
             <div className="flex flex-col items-center gap-2">
-              <InfoIcon className="h-8 w-8 text-primary" />
+              <InfoIcon className="h-8 w-8 text-[#c4b078]" />
               <h3 className="text-lg font-semibold">Transparency</h3>
               <p className="text-muted-foreground text-sm">
                 We are committed to open and honest communication, providing
@@ -37,7 +37,7 @@ const Mission = () => {
               </p>
             </div>
             <div className="flex flex-col items-center gap-2">
-              <ServerIcon className="h-8 w-8 text-primary" />
+              <ServerIcon className="h-8 w-8 text-[#c4b078]" />
               <h3 className="text-lg font-semibold">Client-Centered</h3>
               <p className="text-muted-foreground text-sm">
                 Our clients' needs and goals are at the heart of everything we
