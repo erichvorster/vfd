@@ -17,6 +17,8 @@ import {
 } from "../components/ui/card";
 import { Check, Linkedin } from "lucide-react";
 import { LightBulbIcon } from "./Icons";
+import Image from "next/image";
+import gp from "../public/gp.jpg";
 
 const cardVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -54,11 +56,6 @@ export const HeroCards = () => {
         {/* Testimonial */}
         <Card>
           <CardHeader className="flex flex-row items-center gap-4 pb-2">
-            <Avatar>
-              <AvatarImage alt="" src="https://github.com/shadcn.png" />
-              <AvatarFallback>SH</AvatarFallback>
-            </Avatar>
-
             <div className="flex flex-col">
               <CardTitle className="text-lg">Jane Smith</CardTitle>
               <CardDescription>@jane_smith</CardDescription>
@@ -82,14 +79,14 @@ export const HeroCards = () => {
         {/* Team */}
         <Card>
           <CardHeader className="mt-8 flex justify-center items-center pb-2">
-            <img
-              src="https://i.pravatar.cc/150?img=58"
+            <Image
+              src={gp}
               alt="user avatar"
-              className="absolute grayscale-[0%] -top-12 rounded-full w-24 h-24 aspect-square object-cover"
+              className="absolute grayscale-[0%] -top-12 rounded-full w-24 h-24 aspect-square object-cover object-top"
             />
-            <CardTitle className="text-center">Leo Miranda</CardTitle>
+            <CardTitle className="text-center">GP Janse van Rensburg</CardTitle>
             <CardDescription className="font-normal text-primary">
-              Senior Financial Advisor
+              Financial Advisor
             </CardDescription>
           </CardHeader>
 
