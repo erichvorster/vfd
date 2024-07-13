@@ -16,6 +16,9 @@ const logos = [ins1, ins2, ins3, ins4, ins5, ins6, ins7];
 export const Partners = () => {
   const doubledLogos = [...logos, ...logos, ...logos, ...logos, ...logos];
 
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+  const duration = isMobile ? 12 : 25; // Faster animation on mobile
+
   return (
     <section className="w-full py-2 bg-white">
       <div className="mx-auto">
@@ -24,7 +27,11 @@ export const Partners = () => {
             className="flex"
             initial={{ x: 0 }}
             animate={{ x: "-50%" }}
-            transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
+            transition={{
+              repeat: Infinity,
+              duration: duration,
+              ease: "linear",
+            }}
           >
             {doubledLogos.map((logo, index) => (
               <div key={index} className="flex-shrink-0 mx-4">

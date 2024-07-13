@@ -12,7 +12,7 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: staggerDuration, // Consistent gap between all animations
+      staggerChildren: staggerDuration,
     },
   },
 };
@@ -24,7 +24,7 @@ const itemVariants = {
 
 export const Hero = () => {
   return (
-    <div className="relative bg-[#275f44]">
+    <div className="relative bg-[#275f44] overflow-hidden">
       <section className="relative container grid lg:grid-cols-2 place-items-center py-20 md:py-32 gap-10 z-10">
         <motion.div
           className="text-center lg:text-start space-y-6"
@@ -33,7 +33,7 @@ export const Hero = () => {
           variants={containerVariants}
         >
           <motion.main
-            className="text-5xl md:text-6xl font-bold"
+            className="text-4xl md:text-6xl font-bold"
             variants={itemVariants}
           >
             <h1 className="inline text-white">Building Wealth, </h1>
@@ -80,7 +80,7 @@ export const Hero = () => {
         </motion.div>
       </section>
       <motion.div
-        className="absolute -bottom-14 left-0 w-full h-auto"
+        className="absolute bottom-0 left-0 w-full h-full"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: staggerDuration * 3, duration: 0.5 }} // Background SVG animates after text content
@@ -90,7 +90,7 @@ export const Hero = () => {
           version="1.1"
           xmlnsXlink="http://www.w3.org/1999/xlink"
           xmlnsSvgjs="http://svgjs.dev/svgjs"
-          className="w-full h-auto"
+          className="w-full h-full object-cover"
           preserveAspectRatio="xMidYMin slice"
           viewBox="0 0 1440 560"
         >

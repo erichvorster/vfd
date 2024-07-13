@@ -20,14 +20,14 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1, // Reduced delay for faster stagger
+      staggerChildren: 0.1,
     },
   },
 };
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.3 } }, // Reduced duration for faster animation
+  visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
 };
 
 export const Services = () => {
@@ -39,7 +39,7 @@ export const Services = () => {
       viewport={{ once: true }}
       variants={containerVariants}
     >
-      <div className="container">
+      <div className="container px-4 ">
         <motion.h2
           className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-14"
           variants={itemVariants}
@@ -47,14 +47,14 @@ export const Services = () => {
           How We Can Help You
         </motion.h2>
         <motion.div
-          className="grid gap-8 px-4 md:px-6 lg:grid-cols-4 lg:gap-12"
+          className="grid gap-8 px-0  md:px-6 lg:grid-cols-4 lg:gap-12"
           variants={containerVariants}
         >
           {services.map((service, index) => (
             <motion.div key={index} variants={itemVariants}>
               <Link
                 href={service.link}
-                className="group space-y-4 p-4 rounded-lg transition-all duration-300 ease-in-out hover:bg-[#19a65b] hover:bg-opacity-20 cursor-pointer block"
+                className="group space-y-4 p-1  md:p-4  rounded-lg transition-all duration-300 ease-in-out hover:bg-[#19a65b] hover:bg-opacity-20 cursor-pointer block md:hover:bg-[#19a65b] md:hover:bg-opacity-20"
               >
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#275f44] text-[#c4b078]">
                   {service.icon}
@@ -67,7 +67,7 @@ export const Services = () => {
                 </div>
                 <div className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline">
                   Learn More
-                  <ArrowRight className="h-4 w-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1" />
+                  <ArrowRight className="h-4 w-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1 md:group-hover:translate-x-1" />
                 </div>
               </Link>
             </motion.div>

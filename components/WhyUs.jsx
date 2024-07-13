@@ -4,9 +4,9 @@ import { Lightbulb, BarChart, Shield } from "lucide-react";
 export const WhyUs = () => {
   return (
     <section className="w-full py-12 md:py-24 lg:py-32 bg-muted">
-      <div className="container grid items-center justify-center gap-8 px-4 md:px-6 lg:grid-cols-3 lg:gap-10">
-        <div className="space-y-4 text-center">
-          <Lightbulb className="mx-auto h-12 w-12 text-[#c4b078]" />
+      <div className="container grid items-start justify-start gap-8 px-4 md:px-6 lg:grid-cols-3 lg:gap-10">
+        <div className="space-y-4 ">
+          <Lightbulb className=" h-12 w-12 text-[#c4b078]" />
           <h3 className="text-xl font-bold">Expert Financial Advisors</h3>
           <p className="text-muted-foreground">
             Our team comprises seasoned professionals with years of experience
@@ -16,8 +16,8 @@ export const WhyUs = () => {
             of financial planning with confidence.
           </p>
         </div>
-        <div className="space-y-4 text-center">
-          <BarChart className="mx-auto h-12 w-12 text-[#c4b078]" />
+        <div className="space-y-4">
+          <BarChart className=" h-12 w-12 text-[#c4b078]" />
           <h3 className="text-xl font-bold">
             Personalized Service & Comprehensive Solutions
           </h3>
@@ -30,8 +30,8 @@ export const WhyUs = () => {
             financial well-being.
           </p>
         </div>
-        <div className="space-y-4 text-center">
-          <Shield className="mx-auto h-12 w-12 text-[#c4b078]" />
+        <div className="space-y-4 ">
+          <Shield className=" h-12 w-12 text-[#c4b078]" />
           <h3 className="text-xl font-bold">Integrity, Insights & Support</h3>
           <p className="text-muted-foreground">
             We uphold the highest standards of integrity and transparency in all

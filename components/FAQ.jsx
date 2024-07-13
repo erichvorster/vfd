@@ -29,12 +29,22 @@ export const FAQ = () => {
         </div>
         <Tabs defaultValue="life-insurance" className="w-full md:w-1/2 mx-auto">
           <TabsList className="grid w-full grid-cols-4 gap-2">
-            <TabsTrigger value="life-insurance">Life Insurance</TabsTrigger>
-            <TabsTrigger value="medical-aid">Medical Aid</TabsTrigger>
-            <TabsTrigger value="car-home-insurance">
-              Car & Home Insurance
+            <TabsTrigger value="life-insurance">
+              <span className="block md:hidden">Life</span>
+              <span className="hidden md:block">Life Insurance</span>
             </TabsTrigger>
-            <TabsTrigger value="investment">Investment</TabsTrigger>
+            <TabsTrigger value="medical-aid">
+              <span className="block md:hidden">Medical</span>
+              <span className="hidden md:block">Medical Aid</span>
+            </TabsTrigger>
+            <TabsTrigger value="car-home-insurance">
+              <span className="block md:hidden">Car/Home</span>
+              <span className="hidden md:block">Car & Home Insurance</span>
+            </TabsTrigger>
+            <TabsTrigger value="investment">
+              <span className="block md:hidden">Invest</span>
+              <span className="hidden md:block">Investment</span>
+            </TabsTrigger>
           </TabsList>
           <TabsContent value="life-insurance">
             <Accordion type="single" collapsible className="w-full">
