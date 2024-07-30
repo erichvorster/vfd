@@ -3,108 +3,85 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Shield, Heart, Car, TrendingUp } from "lucide-react";
+import { useLanguage } from "../components/Context/useLangauge"; // Import useLanguage
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0 },
-};
-
-const staggerContainer = {
+const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.1,
     },
   },
 };
 
-export const Products = () => {
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
+};
+
+const Products = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
+  const { language, translations } = useLanguage(); // Get language and translations
+
+  const productsTranslations =
+    translations[language].homePage.productsComponent;
+
+  const productsIcons = [
+    <Shield className="h-8 w-8 text-[#c4b078]" />,
+    <Heart className="h-8 w-8 text-[#c4b078]" />,
+    <Car className="h-8 w-8 text-[#c4b078]" />,
+    <TrendingUp className="h-8 w-8 text-[#c4b078]" />,
+  ];
 
   return (
-    <section ref={ref} className="w-full py-12 md:py-24 lg:py-32">
+    <motion.section
+      ref={ref}
+      className="w-full py-12 md:py-24 lg:py-32"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={containerVariants}
+    >
       <div className="container grid gap-10 px-4 md:grid-cols-2 md:gap-16 md:px-6">
-        <motion.div
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-          variants={staggerContainer}
-          className="space-y-4"
-        >
+        <motion.div variants={containerVariants} className="space-y-4">
           <motion.h2
-            variants={cardVariants}
-            className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl"
+            variants={itemVariants}
+            className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-[#c4b078]"
           >
-            Independent Financial Advice
+            {productsTranslations.title}
           </motion.h2>
           <motion.p
-            variants={cardVariants}
+            variants={itemVariants}
             className="max-w-[700px] text-muted-foreground md:text-xl/relaxed"
           >
-            As an independent financial advisory firm, we work with a variety of
-            service providers to offer you unbiased financial advice that best
-            suits your needs. We collaborate with over 6 life insurers, 8
-            medical aids, 5 short-term and car insurers, and 12 investment
-            houses to ensure you receive the best options available.
+            {productsTranslations.description}
           </motion.p>
         </motion.div>
         <motion.div
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-          variants={staggerContainer}
-          className="grid grid-cols-2 gap-6"
+          variants={containerVariants}
+          className="grid grid-cols-1 sm:grid-cols-2 gap-6"
         >
-          <motion.div
-            variants={cardVariants}
-            className="rounded-lg border bg-card p-6 shadow-sm bg-[#19a65b] bg-opacity-20"
-          >
-            <div className="flex items-center space-x-4">
-              <Shield className="h-8 w-8 text-[#c4b078]" />
-              <div className="text-3xl font-bold">6+</div>
-            </div>
-            <h3 className="mt-2 text-lg font-semibold text-[#19a65b]">
-              Life Insurers
-            </h3>
-          </motion.div>
-          <motion.div
-            variants={cardVariants}
-            className="rounded-lg border bg-card p-6 shadow-sm bg-[#19a65b] bg-opacity-20"
-          >
-            <div className="flex items-center space-x-4">
-              <Heart className="h-8 w-8 text-[#c4b078]" />
-              <div className="text-3xl font-bold">8+</div>
-            </div>
-            <h3 className="mt-2 text-lg font-semibold text-[#19a65b]">
-              Medical Aids
-            </h3>
-          </motion.div>
-          <motion.div
-            variants={cardVariants}
-            className="rounded-lg border bg-card p-6 shadow-sm bg-[#19a65b] bg-opacity-20"
-          >
-            <div className="flex items-center space-x-4">
-              <Car className="h-8 w-8 text-[#c4b078]" />
-              <div className="text-3xl font-bold">5+</div>
-            </div>
-            <h3 className="mt-2 text-lg font-semibold text-[#19a65b]">
-              Short-term & Car Insurers
-            </h3>
-          </motion.div>
-          <motion.div
-            variants={cardVariants}
-            className="rounded-lg border bg-card p-6 shadow-sm bg-[#19a65b] bg-opacity-20"
-          >
-            <div className="flex items-center space-x-4">
-              <TrendingUp className="h-8 w-8 text-[#c4b078]" />
-              <div className="text-3xl font-bold">12+</div>
-            </div>
-            <h3 className="mt-2 text-lg font-semibold text-[#19a65b]">
-              Investment Houses
-            </h3>
-          </motion.div>
+          {productsTranslations.products.map((product, index) => (
+            <motion.div
+              key={index}
+              variants={itemVariants}
+              className="rounded-lg border bg-card p-6 shadow-sm bg-[#19a65b] bg-opacity-20"
+            >
+              <div className="flex items-center space-x-4">
+                {productsIcons[index]}
+                <div className="text-3xl font-bold">{product.count}</div>
+              </div>
+              <h3 className="mt-2 text-lg font-semibold text-[#19a65b]">
+                {product.title}
+              </h3>
+            </motion.div>
+          ))}
         </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
+
+export default Products;

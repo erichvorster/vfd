@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import { HeroCards } from "./HeroCards";
 import Link from "next/link";
+import { useLanguage } from "./Context/useLangauge";
 
 const staggerDuration = 0.05;
 
@@ -22,9 +23,12 @@ const itemVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.2 } },
 };
 
-export const Hero = () => {
+const Hero = () => {
+  const { language, translations } = useLanguage();
+  const heroTranslations = translations[language].homePage.heroComponent;
+
   return (
-    <div className="relative bg-[#275f44] overflow-hidden">
+    <div className="relative bg-[#275f44] overflow-hidden min-h-screen md:min-h-0 flex items-center justify-center md:block">
       <section className="relative container grid lg:grid-cols-2 place-items-center py-20 md:py-32 gap-10 z-10">
         <motion.div
           className="text-center lg:text-start space-y-6"
@@ -36,33 +40,35 @@ export const Hero = () => {
             className="text-4xl md:text-6xl font-bold"
             variants={itemVariants}
           >
-            <h1 className="inline text-white">Building Wealth, </h1>
-            <h2 className="inline text-white">Securing Futures</h2>
+            <h1 className="inline text-[#c4b078]">
+              {heroTranslations.headingPart1}{" "}
+            </h1>
+            <h2 className="inline text-[#c4b078]">
+              {heroTranslations.headingPart2}
+            </h2>
           </motion.main>
 
           <motion.p
-            className="text-xl text-muted-foreground md:w-10/12 mx-auto lg:mx-0"
+            className="text-xl text-white md:w-10/12 mx-auto lg:mx-0"
             variants={itemVariants}
           >
-            Expert Financial Advice and Customized Plans to Navigate Your
-            Financial Journey
+            {heroTranslations.description}
           </motion.p>
 
           <motion.div
             className="space-y-4 md:space-y-0 md:space-x-4"
             variants={itemVariants}
           >
-            <Link href="/Contact">
-              <Button className="w-full md:w-1/3">Get Started</Button>
+            <Link href="/GetStarted">
+              <Button className="w-full md:w-1/3">
+                {heroTranslations.buttonText}
+              </Button>
             </Link>
           </motion.div>
         </motion.div>
 
-        {/* SVG Background */}
-
-        {/* Hero cards sections */}
         <motion.div
-          className="z-10"
+          className="z-10 hidden lg:block"
           initial="hidden"
           animate="visible"
           variants={{
@@ -70,8 +76,8 @@ export const Hero = () => {
             visible: {
               opacity: 1,
               transition: {
-                staggerChildren: staggerDuration, // Consistent gap between hero card animations
-                delayChildren: staggerDuration * 4, // Start animating hero cards after background
+                staggerChildren: staggerDuration,
+                delayChildren: staggerDuration * 4,
               },
             },
           }}
@@ -80,7 +86,7 @@ export const Hero = () => {
         </motion.div>
       </section>
       <motion.div
-        className="absolute bottom-0 left-0 w-full h-full"
+        className="absolute bottom-0 left-0 w-full h-full svg-container"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: staggerDuration * 3, duration: 0.5 }} // Background SVG animates after text content
@@ -91,7 +97,7 @@ export const Hero = () => {
           xmlnsXlink="http://www.w3.org/1999/xlink"
           xmlnsSvgjs="http://svgjs.dev/svgjs"
           className="w-full h-full object-cover"
-          preserveAspectRatio="xMidYMin slice"
+          preserveAspectRatio="xMidYMin meet"
           viewBox="0 0 1440 560"
         >
           <g mask='url("#SvgjsMask1004")' fill="none">
@@ -124,3 +130,5 @@ export const Hero = () => {
     </div>
   );
 };
+
+export default Hero;

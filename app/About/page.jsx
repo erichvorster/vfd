@@ -9,8 +9,8 @@ const page = () => {
     <div>
       <Hero />
       <Mission />
-      <OurTeam />
       <Awards />
+      <OurTeam />
     </div>
   );
 };

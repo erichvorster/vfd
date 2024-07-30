@@ -9,12 +9,12 @@ import {
 } from "../components/ui/carousel";
 import { ChevronRight, ChevronLeft } from "lucide-react";
 
-export const Testimonials = () => {
+const Testimonials = () => {
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32">
+    <section className="w-full py-24  md:py-24 lg:py-32 ">
       <div className="container px-4 md:px-6">
         <div className="space-y-4 text-center">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+          <h2 className="text-3xl font-bold tracking-tighter text-[#c4b078] backdrop:sm:text-4xl md:text-5xl">
             What Our Clients Say
           </h2>
           <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
@@ -94,3 +94,5 @@ export const Testimonials = () => {
     </section>
   );
 };
+
+export default Testimonials;

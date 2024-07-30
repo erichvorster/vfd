@@ -2,11 +2,10 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import AboutImg from "../public/about.svg";
 import Image from "next/image";
 import { Check, Sprout } from "lucide-react";
-import Chatting from "../public/chatting.jpg";
 import Logo from "../public/Logo.svg";
+import { useLanguage } from "../components/Context/useLangauge";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -23,7 +22,11 @@ const itemVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
-export const About = () => {
+const About = () => {
+  const { language, translations } = useLanguage(); // Get language and translations
+
+  const aboutTranslations = translations[language].homePage.aboutComponent;
+
   return (
     <motion.section
       className="w-full py-12 md:py-24 lg:py-32"
@@ -47,40 +50,26 @@ export const About = () => {
             className="rounded-xl"
           />
         </motion.div>
-        <motion.div className="space-y-4" variants={itemVariants}>
-          <div className="p-1 bg-[#224c3a] rounded-full h-10 w-10">
-            <Sprout className="h-8 w-8 text-[#c4b078]" />
-          </div>
+        <motion.div className="space-y-4 mb-20" variants={itemVariants}>
           <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-              About Our Financial Services Firm
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-[#c4b078] md:text-5xl">
+              {aboutTranslations.title}
             </h2>
             <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              We are a leading financial services firm in South Africa, focused
-              on providing comprehensive investment planning, insurance
-              solutions, and personalized strategies to help our clients achieve
-              their financial goals.
+              {aboutTranslations.description}
             </p>
           </div>
           <div className="space-y-2">
-            <h3 className="text-2xl font-bold">Why Choose Us?</h3>
+            <h3 className="text-2xl font-bold">
+              {aboutTranslations.whyChooseUsTitle}
+            </h3>
             <ul className="grid gap-2 text-muted-foreground">
-              <li className="flex items-center gap-2">
-                <Check className="h-5 w-5 text-[#c4b078]" />
-                Expert financial advisors with years of experience
-              </li>
-              <li className="flex items-center gap-2">
-                <Check className="h-5 w-5 text-[#c4b078]" />
-                Personalized approach to meet your unique needs
-              </li>
-              <li className="flex items-center gap-2">
-                <Check className="h-5 w-5 text-[#c4b078]" />
-                Comprehensive suite of financial services
-              </li>
-              <li className="flex items-center gap-2">
-                <Check className="h-5 w-5 text-[#c4b078]" />
-                Dedicated customer support and guidance
-              </li>
+              {aboutTranslations.reasons.map((reason, index) => (
+                <li key={index} className="flex items-center text-sm gap-2">
+                  <Check className="flex-shrink-0 h-5 w-5 text-[#c4b078]" />
+                  <span>{reason}</span>
+                </li>
+              ))}
             </ul>
           </div>
         </motion.div>
@@ -88,3 +77,5 @@ export const About = () => {
     </motion.section>
   );
 };
+
+export default About;

@@ -19,6 +19,7 @@ import { Check, Linkedin } from "lucide-react";
 import { LightBulbIcon } from "./Icons";
 import Image from "next/image";
 import gp from "../public/gp.jpg";
+import { useLanguage } from "../components/Context/useLangauge"; // Import your language context
 
 const cardVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -26,6 +27,10 @@ const cardVariants = {
 };
 
 export const HeroCards = () => {
+  const { language, translations } = useLanguage(); // Get language and translations
+  const heroCardsTranslations =
+    translations[language].homePage.heroCardsComponent;
+
   const ref = useRef(null);
   const isInView = useInView(ref);
   const { scrollY } = useViewportScroll();
@@ -57,15 +62,16 @@ export const HeroCards = () => {
         <Card>
           <CardHeader className="flex flex-row items-center gap-4 pb-2">
             <div className="flex flex-col">
-              <CardTitle className="text-lg">Jane Smith</CardTitle>
-              <CardDescription>@jane_smith</CardDescription>
+              <CardTitle className="text-lg">
+                {heroCardsTranslations.card1.name}
+              </CardTitle>
+              <CardDescription>
+                {heroCardsTranslations.card1.description}
+              </CardDescription>
             </div>
           </CardHeader>
 
-          <CardContent>
-            "The personalized investment strategies have significantly boosted
-            my portfolio."
-          </CardContent>
+          <CardContent>{heroCardsTranslations.card1.content}</CardContent>
         </Card>
       </motion.div>
 
@@ -84,23 +90,22 @@ export const HeroCards = () => {
               alt="user avatar"
               className="absolute grayscale-[0%] -top-12 rounded-full w-24 h-24 aspect-square object-cover object-top"
             />
-            <CardTitle className="text-center">GP Janse van Rensburg</CardTitle>
+            <CardTitle className="text-center">
+              {heroCardsTranslations.card2.name}
+            </CardTitle>
             <CardDescription className="font-normal text-primary">
-              Financial Advisor
+              {heroCardsTranslations.card2.description}
             </CardDescription>
           </CardHeader>
 
           <CardContent className="text-center pb-2">
-            <p>
-              "I am dedicated to helping clients achieve their financial goals
-              through tailored strategies."
-            </p>
+            <p>{heroCardsTranslations.card2.content}</p>
           </CardContent>
 
           <CardFooter>
             <div>
               <a
-                href="https://linkedin.com/in/leoMiranda"
+                href={heroCardsTranslations.card2.linkedinLink}
                 target="_blank"
                 className={buttonVariants({ variant: "ghost", size: "sm" })}
               >
@@ -123,31 +128,27 @@ export const HeroCards = () => {
         <Card>
           <CardHeader>
             <CardTitle className="flex item-center justify-between">
-              Financial Services
+              {heroCardsTranslations.card3.title}
             </CardTitle>
 
             <CardDescription>
-              Tailored services to help you achieve your financial goals.
+              {heroCardsTranslations.card3.description}
             </CardDescription>
           </CardHeader>
 
           <CardContent>
-            <Button className="w-full">View Services</Button>
+            <Button className="w-full">
+              {heroCardsTranslations.card3.buttonText}
+            </Button>
           </CardContent>
 
           <hr className="w-4/5 m-auto mb-4" />
 
           <CardFooter className="flex">
             <div className="space-y-4 text-sm">
-              {[
-                "Investments",
-                "Long Term Insurance",
-                "Car & Home Insurance",
-                "Medical Aid",
-                "Estate Planning",
-              ].map((benefit) => (
+              {heroCardsTranslations.card3.benefits.map((benefit) => (
                 <span key={benefit} className="flex">
-                  <Check className="text-secondary" />{" "}
+                  <Check className="text-secondary" />
                   <h3 className="ml-2">{benefit}</h3>
                 </span>
               ))}
@@ -170,10 +171,9 @@ export const HeroCards = () => {
               <LightBulbIcon />
             </div>
             <div>
-              <CardTitle>Comprehensive Financial Planning</CardTitle>
+              <CardTitle>{heroCardsTranslations.card4.title}</CardTitle>
               <CardDescription className="text-md mt-2">
-                We offer holistic financial planning services to ensure your
-                long-term financial health and growth.
+                {heroCardsTranslations.card4.description}
               </CardDescription>
             </div>
           </CardHeader>

@@ -3,6 +3,7 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Link from "next/link";
+import { useLanguage } from "../components/Context/useLangauge"; // Import useLanguage
 
 const staggerDuration = 0.05;
 
@@ -29,6 +30,9 @@ const buttonVariants = {
 const CTA = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
+  const { language, translations } = useLanguage(); // Get language and translations
+
+  const ctaTranslations = translations[language].homePage.ctaComponent;
 
   return (
     <div className="relative">
@@ -45,16 +49,15 @@ const CTA = () => {
           >
             <motion.h2
               variants={itemVariants}
-              className="text-3xl font-bold tracking-tighter md:text-4xl/tight"
+              className="text-3xl font-bold tracking-tighter md:text-4xl/tight text-zinc-800"
             >
-              Ready to Secure Your Financial Future?
+              {ctaTranslations.title}
             </motion.h2>
             <motion.p
               variants={itemVariants}
               className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"
             >
-              Join countless others who have trusted us with their financial
-              planning and insurance needs. Get started today!
+              {ctaTranslations.description}
             </motion.p>
           </motion.div>
           <motion.div
@@ -65,20 +68,20 @@ const CTA = () => {
           >
             <motion.div variants={buttonVariants}>
               <Link
-                href="#"
+                href="/GetStarted"
                 className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
                 prefetch={false}
               >
-                Contact Us
+                {ctaTranslations.buttons.contactUs}
               </Link>
             </motion.div>
             <motion.div variants={buttonVariants}>
               <Link
-                href="#"
+                href="/Contact"
                 className="inline-flex h-10 items-center justify-center rounded-md border border-input bg-background px-8 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
                 prefetch={false}
               >
-                Explore Our Services
+                {ctaTranslations.buttons.exploreServices}
               </Link>
             </motion.div>
           </motion.div>
@@ -87,7 +90,7 @@ const CTA = () => {
 
       {/* SVG Background */}
       <motion.div
-        className="absolute top-0 left-0 w-full h-full"
+        className="absolute top-0 left-0 w-full h-full hidden md:block" // Hide on mobile
         initial={{ opacity: 0 }}
         animate={inView ? { opacity: 1 } : { opacity: 0 }}
         transition={{ delay: staggerDuration * 3, duration: 0.5 }}

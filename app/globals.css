@@ -82,3 +82,13 @@
 
 
   
+  .svg-container {
+    display: block;
+  }
+  
+  @media (max-width: 768px) {
+    .svg-container {
+      display: none;
+    }
+  }
+  

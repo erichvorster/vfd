@@ -1,8 +1,9 @@
 import { PT_Serif } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "../components/ThemeProvider";
-import { Navbar } from "../components/NavBar";
+import Navbar from "../components/NavBar";
 import { Footer } from "../components/Footer";
+import { LanguageProvider } from "../components/Context/useLangauge";
 
 const ptSerif = PT_Serif({ subsets: ["latin"], weight: ["400", "700"] });
 
@@ -21,9 +22,11 @@ const RootLayout = ({ children }) => {
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
-          {children}
-          <Footer />
+          <LanguageProvider>
+            <Navbar />
+            {children}
+            <Footer />
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>

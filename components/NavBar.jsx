@@ -15,6 +15,12 @@ import {
 } from "../components/ui/sheet";
 import Link from "next/link";
 import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "../components/ui/tooltip";
+import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
@@ -29,9 +35,11 @@ import {
   Heart,
   Car,
   TrendingUp,
+  Languages,
 } from "lucide-react";
 import { ModeToggle } from "./ModeToggle";
 import { Button } from "./ui/button";
+import { useLanguage } from "../components/Context/useLangauge"; // Import useLanguage
 
 const routeList = [
   {
@@ -54,11 +62,17 @@ const routeList = [
     href: "/Contact",
     label: "Contact",
   },
+  {
+    href: "/GetStarted",
+    label: "Get Started",
+  },
 ];
 
-export const Navbar = () => {
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [showTooltip, setShowTooltip] = useState(false);
+  const { language, setLanguage } = useLanguage(); // Get language and setLanguage
 
   useEffect(() => {
     const handleScroll = () => {
@@ -75,10 +89,22 @@ export const Navbar = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const showTimer = setTimeout(() => {
+      setShowTooltip(true);
+      const hideTimer = setTimeout(() => {
+        setShowTooltip(false);
+      }, 3000); // Hide tooltip after 3 seconds
+      return () => clearTimeout(hideTimer);
+    }, 3000); // Show tooltip after 3 seconds
+
+    return () => clearTimeout(showTimer);
+  }, []);
+
   return (
     <div
       className={`sticky top-0 z-40 w-full border-b-[1px] transition-all duration-500 bg-[#275f44] ${
-        isScrolled ? " shadow-md" : "  shadow-none"
+        isScrolled ? "shadow-md" : "shadow-none"
       }`}
     >
       <NavigationMenu className="mx-auto">
@@ -94,19 +120,20 @@ export const Navbar = () => {
 
           {/* mobile */}
           <div className="flex md:hidden">
-            {/* <ModeToggle /> */}
-
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger className="px-2">
                 <Menu
-                  className="flex md:hidden h-5 w-5"
+                  className="flex md:hidden h-6 w-6 text-white"
                   onClick={() => setIsOpen(true)}
                 />
               </SheetTrigger>
 
-              <SheetContent side={"left"}>
+              <SheetContent side={"left"} className="bg-[#275f44] text-white">
                 <SheetHeader>
-                  <SheetTitle className="font-bold text-xl"> VBGFIN</SheetTitle>
+                  <SheetTitle className="font-bold text-xl text-white">
+                    {" "}
+                    VBGFIN
+                  </SheetTitle>
                 </SheetHeader>
                 <nav className="flex flex-col justify-center items-center gap-2 mt-4">
                   {routeList.map(({ href, label }) => (
@@ -119,15 +146,6 @@ export const Navbar = () => {
                       {label}
                     </Link>
                   ))}
-
-                  <Link
-                    href="/Contact"
-                    className={`w-[110px] border ${buttonVariants({
-                      variant: "secondary",
-                    })}`}
-                  >
-                    Contact
-                  </Link>
                 </nav>
               </SheetContent>
             </Sheet>
@@ -146,12 +164,26 @@ export const Navbar = () => {
             ))}
           </nav>
           <div className="hidden md:flex gap-2">
-            <Button
-              href="/Contact"
-              className={` ${buttonVariants({ variant: "primary" })}`}
-            >
-              Contact
-            </Button>
+            <TooltipProvider>
+              <Tooltip open={showTooltip}>
+                <TooltipTrigger asChild>
+                  <Button
+                    onClick={() => setLanguage(language === "en" ? "af" : "en")} // Language toggle button
+                    className={`${buttonVariants({ variant: "primary" })}`}
+                  >
+                    {language === "en" ? "Afrikaans" : "English"}
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <div className="flex items-center">
+                    <Languages className="h-4 w-4 mr-2" />
+                    <p>
+                      Switch to {language === "en" ? "Afrikaans" : "English"}
+                    </p>
+                  </div>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
             <ModeToggle />
           </div>
         </NavigationMenuList>
@@ -159,3 +191,5 @@ export const Navbar = () => {
     </div>
   );
 };
+
+export default Navbar;
