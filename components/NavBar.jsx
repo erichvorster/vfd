@@ -184,7 +184,6 @@ const Navbar = () => {
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>
-            <ModeToggle />
           </div>
         </NavigationMenuList>
       </NavigationMenu>

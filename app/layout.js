@@ -4,6 +4,7 @@ import { ThemeProvider } from "../components/ThemeProvider";
 import Navbar from "../components/NavBar";
 import { Footer } from "../components/Footer";
 import { LanguageProvider } from "../components/Context/useLangauge";
+import Contact from "../components/Contact";
 
 const ptSerif = PT_Serif({ subsets: ["latin"], weight: ["400", "700"] });
 
@@ -25,6 +26,7 @@ const RootLayout = ({ children }) => {
           <LanguageProvider>
             <Navbar />
             {children}
+            <Contact />
             <Footer />
           </LanguageProvider>
         </ThemeProvider>

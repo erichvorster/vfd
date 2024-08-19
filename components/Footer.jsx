@@ -26,7 +26,7 @@ const routeList = [
 
 export const Footer = () => {
   return (
-    <footer className="bg-[#c4b078] text-white py-8 sm:py-12 mt-24 lg:py-16">
+    <footer className="bg-[#c4b078] text-white py-8 sm:py-12 lg:py-16">
       <div className="container flex flex-col items-center justify-between gap-8 sm:flex-row">
         <div className="flex items-center gap-4">
           <Link href="/" className="flex items-center gap-2" prefetch={false}>

@@ -528,6 +528,35 @@ const translations = {
         },
       ],
     },
+    contactPage: {
+      heading: "Get in Touch",
+      description:
+        "Our team of financial advisors is here to help you achieve your financial goals. Fill out the form below and we'll be in touch shortly.",
+      addressTitle: "Acme Financial Advisors",
+      address: "123 Main St, Anytown USA 12345",
+      phone: "(123) 456-7890",
+      phoneAvailability: "Monday - Friday, 9am - 5pm",
+      email: "info@acmefinancial.com",
+      emailResponse: "We typically respond within 1 business day",
+      businessHoursTitle: "Business Hours",
+      businessHours: "Monday - Friday, 9am - 5pm",
+      formTitle: "Contact Us",
+      formDescription:
+        "Fill out the form below and we'll get back to you as soon as possible.",
+      formFields: {
+        name: "Name",
+        email: "Email",
+        phone: "Phone",
+        message: "Message",
+      },
+      formPlaceholders: {
+        name: "Enter your name",
+        email: "Enter your email",
+        phone: "Enter your phone number",
+        message: "Enter your message",
+      },
+      submitButton: "Submit",
+    },
   },
   af: {
     homePage: {
@@ -1059,6 +1088,35 @@ const translations = {
           ],
         },
       ],
+    },
+    contactPage: {
+      heading: "Kontak Ons",
+      description:
+        "Ons span finansiële adviseurs is hier om u te help om u finansiële doelwitte te bereik. Vul die vorm hieronder in en ons sal binnekort in verbinding wees.",
+      addressTitle: "Acme Finansiële Adviseurs",
+      address: "123 Hoofstraat, Enigedorp, VSA 12345",
+      phone: "(123) 456-7890",
+      phoneAvailability: "Maandag - Vrydag, 9vm - 5nm",
+      email: "info@acmefinansieel.com",
+      emailResponse: "Ons reageer gewoonlik binne 1 werksdag",
+      businessHoursTitle: "Besiensure",
+      businessHours: "Maandag - Vrydag, 9vm - 5nm",
+      formTitle: "Kontak Ons",
+      formDescription:
+        "Vul die vorm hieronder in en ons sal so gou as moontlik terugkom.",
+      formFields: {
+        name: "Naam",
+        email: "E-pos",
+        phone: "Telefoon",
+        message: "Boodskap",
+      },
+      formPlaceholders: {
+        name: "Voer u naam in",
+        email: "Voer u e-pos in",
+        phone: "Voer u telefoonnommer in",
+        message: "Voer u boodskap in",
+      },
+      submitButton: "Indien",
     },
   },
 };
